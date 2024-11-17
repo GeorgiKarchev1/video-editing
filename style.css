@@ -1,0 +1,249 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    font-style: normal;
+    font-weight: 600;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Header/Hero Section */
+.hero {
+    height: 100vh;
+    background: transparent;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.social-links a {
+    color: white;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Portfolio Section */
+.portfolio, .channels, .contact {
+    padding: 5rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+
+.video-grid, .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Channel Items */
+.channel-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.channel-item img {
+    width: 150px;  /* Smaller fixed width */
+    height: 150px; /* Same height to maintain circle shape */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures image fills the circle without distortion */
+    margin: 0 auto 1rem auto; /* Centers the image and adds bottom margin */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Optional: adds a subtle border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: adds depth */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.channel-item img:hover {
+    transform: scale(1.05); /* Optional: slight zoom on hover */
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .channel-item img {
+        width: 120px;  /* Even smaller on mobile */
+        height: 120px;
+    }
+}
+
+.channel-item p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cta-button {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #2c3e50;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+.contact p {
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .video-grid, .channel-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        padding: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+}
+
+/* Update headings for better visibility */
+h1, h2, h3 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Global text styles */
+p {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
+
+/* Glow animation */
+@keyframes glow {
+    from {
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.3),
+            0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    to {
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.3),
+            0 0 20px rgba(255, 255, 255, 0.8),
+            0 0 30px rgba(255, 255, 255, 0.6),
+            0 0 40px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Enhanced heading styles */
+h1 {
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1rem;
+}
+
+/* Channel and portfolio item text */
+.channel-item p, .video-item p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
